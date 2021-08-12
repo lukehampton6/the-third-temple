@@ -115,6 +115,24 @@ router.put('/upvote', withAuth, (req, res) => {
   }
 });
 
+router.put("/:id", withAuth, (req, res) => {
+  Post.update({
+    title: req.body.title,
+    body: req.body.body,
+    user_id: req.session.user_id
+  },
+  {
+    where: {
+      id: req.params.id,
+    }
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.delete("/:id", withAuth, (req, res) => {
   Post.destroy({
     where: {

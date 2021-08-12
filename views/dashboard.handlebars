@@ -8,7 +8,7 @@
     </div>
     <div>
       <label for="post-body">body</label>
-      <textarea id="post-body" name="post-body"></textarea>
+      <textarea id="post-body" name="post-body" maxlength="1234"></textarea>
     </div>
     <button type="submit" class="btn">create</button>
   </form>
@@ -21,7 +21,6 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit function</a>
     </li>
     {{/each}}
   </ul>

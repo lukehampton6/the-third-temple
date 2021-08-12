@@ -9,6 +9,10 @@
   <div>
     <button type="submit">console log</button>
     <button type="button" class="upvote-btn">votes++</button>
+    {{#if isUsersPost}}
+    <button type="button" class="delete-post-btn">delete</button>
+    <button type="button" class="edit-link"><a class="button-link" href="/dashboard/edit/{{post.id}}">edit function</a></button>
+    {{/if}}
   </div>
 </form>
 {{/if}}
@@ -18,4 +22,7 @@
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
+{{#if isUsersPost}}
+<script src="/javascript/delete-post.js"></script>
+{{/if}}
 {{/if}}

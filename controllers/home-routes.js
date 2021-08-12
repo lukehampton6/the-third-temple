@@ -65,6 +65,7 @@ router.get('/post/:id', (req, res) => {
       'body',
       'title',
       'created_at',
+      'user_id',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
@@ -75,10 +76,6 @@ router.get('/post/:id', (req, res) => {
           model: User,
           attributes: ['username']
         }
-      },
-      {
-        model: User,
-        attributes: ['username']
       }
     ]
   })
@@ -88,13 +85,17 @@ router.get('/post/:id', (req, res) => {
         return;
       }
 
-      // serialize the data
       const post = dbPostData.get({ plain: true });
-      
-      // pass data to template
+
+      let isUsersPost = false;
+      if (post.user_id === req.session.user_id) {
+        isUsersPost = true;
+      }
+     
       res.render('single-post', {
         post,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        isUsersPost
       });
     })
     .catch(err => {

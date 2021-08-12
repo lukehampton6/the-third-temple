@@ -122,7 +122,7 @@
   }
   
   .delete-post-btn {
-    background-color: #d41414;
+    background-color: red;
   }
   
   .delete-post-btn:hover {
@@ -139,10 +139,13 @@
     font-size: 90%;
     color: white;
   }
-  
+
   .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
+    background-color: blue;
+  }
+
+  .button-link {
+    color: black;
   }
   
   .upvote-btn {
@@ -161,10 +164,11 @@
   .comment {
     padding: 1%;
     margin-bottom: 1%;
+    color: white;
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: black;
   }
   
   .comment .meta {
