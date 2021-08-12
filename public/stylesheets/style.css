@@ -13,7 +13,7 @@
   
   a {
     text-decoration: none;
-    color: green;
+    color: #00FF00;
     font-weight: bold;
     transition: color .1s;
   }
@@ -23,7 +23,7 @@
   }
   
   button {
-    background-color: green;
+    background-color: #00FF00;
     border: 0;
     padding: 1%;
     color: black;
@@ -41,6 +41,12 @@
     margin: 0;
     padding: 0;
   }
+
+  ul {
+    list-style: none;
+  }
+
+  
   
   textarea, input {
     padding: .5%;
@@ -50,7 +56,7 @@
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid green;
+    border: 1px solid #00FF00;
   }
   
   textarea {
@@ -103,7 +109,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: green;
+    color: #00FF00;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -140,12 +146,12 @@
   }
   
   .upvote-btn {
-    background-color: #197d0f;
+    background-color: #00FF00;
     transition: background-color .1s;
   }
   
   .upvote-btn:hover {
-    background-color: #1f9c13;
+    background-color: white;
   }
   
   .comment-form {

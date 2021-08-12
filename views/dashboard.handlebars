@@ -1,14 +1,14 @@
 <section>
   <h2>create new post</h2>
 
-  <form class="new-post-form">
+  <form class="new-post-form" autocomplete="off">
     <div>
       <label for="post-title">title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
       <label for="post-body">body</label>
-      <input id="post-body" name="post-body" />
+      <textarea id="post-body" name="post-body"></textarea>
     </div>
     <button type="submit" class="btn">create</button>
   </form>
@@ -16,15 +16,15 @@
 
 {{#if posts.length}}
 <section>
-  <h2>your Posts</h2>
-  <ol>
+  <h2>your functions</h2>
+  <ul>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit post</a>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit function</a>
     </li>
     {{/each}}
-  </ol>
+  </ul>
 </section>
 {{/if}}
 
